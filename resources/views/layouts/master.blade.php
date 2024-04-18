@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>Default | Equation - Multipurpose Bootstrap Dashboard Template </title>
     <link rel="icon" type="image/x-icon" href="{{ asset('Equation3/ltr/assets/img/favicon.ico') }}"/>
+
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="{{ asset('Equation3/ltr/assets/css/loader.css') }}" rel="stylesheet" type="text/css" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
@@ -16,7 +17,7 @@
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
     <link href="{{ asset('Equation3/ltr/plugins/maps/vector/jvector/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('Equation3/ltr/plugins/charts/chartist/chartist.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('Equation3/ltr/plugins/charts/chartist/chartist.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('Equation3/ltr/assets/css/default-dashboard/style.css') }}" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 </head>
 <body>
@@ -1151,7 +1152,7 @@
                             <div id="user-profile-card-1" class="card br-4" style="">
                                 <div class="card-body p-0">
                                     <div class="usr-img-meta mx-auto">
-                                        <img alt="admin-profile" src="assets/img/120x120.jpg" class="rounded-circle">
+                                        <img alt="admin-profile" src="{{ ('Equation3/ltr/assets/img/120x120.jpg') }}" class="rounded-circle">
                                     </div>
                                     <div class="usr-info-meta text-center">
                                         <p class="usr-name mb-0">Sean Freeman</p>
@@ -1300,36 +1301,7 @@
     </div>
     <!-- END MAIN CONTAINER -->
 
-    <!--  BEGIN FOOTER  -->
-    <footer class="footer-section theme-footer">
-
-        <div class="footer-section-1  sidebar-theme">
-            
-        </div>
-
-        <div class="footer-section-2 container-fluid">
-            <div class="row">
-                <div id="toggle-grid" class="col-xl-7 col-md-6 col-sm-6 col-12 text-sm-left text-center">
-                    <ul class="list-inline links ml-sm-5">
-                        <li class="list-inline-item">
-                            <a target="_blank" href="https://themeforest.net/item/equation-responsive-admin-dashboard-template/23191987">Buy</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-xl-5 col-md-6 col-sm-6 col-12">
-                    <ul class="list-inline mb-0 d-flex justify-content-sm-end justify-content-center mr-sm-3 ml-sm-0 mx-3">
-                        <li class="list-inline-item  mr-3">
-                            <p class="bottom-footer">&#xA9; 2019 <a target="_blank" href="https://designreset.com/equation">Equation Admin Theme</a></p>
-                        </li>
-                        <li class="list-inline-item align-self-center">
-                            <div class="scrollTop"><i class="flaticon-up-arrow-fill-1"></i></div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--  END FOOTER  -->
+    @includeIf('layouts.footer')
 
     <!--  BEGIN PROFILE SIDEBAR  -->
     <aside class="profile-sidebar text-center">
@@ -1369,14 +1341,13 @@
     </aside>
     <!--  BEGIN PROFILE SIDEBAR  -->
 
-    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
     <script src="{{ asset('Equation3/ltr/assets/js/libs/jquery-3.1.1.min.js') }}"></script>
     <script src="{{ asset('Equation3/ltr/assets/js/loader.js') }}"></script>
     <script src="{{ asset('Equation3/ltr/bootstrap/js/popper.min.js') }}"></script>
-    <script src="{{ asset('Equation3/ltr/bootstrap/js/popper.min.js') }}"></script>
+    <script src="{{ asset('Equation3/ltr/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('Equation3/ltr/plugins/scrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-    <script src="{{ asset('Equation3/ltr/plugins/scrollbar/jquery.mCustomScrollbar.concat.min') }}"></script>
-    <script src="{{ asset('Equation3/ltr/assets/js/loader.js') }}"></script>
+    <script src="{{ asset('Equation3/ltr/plugins/blockui/jquery.blockUI.min.js') }}"></script>
+    <script src="{{ asset('Equation3/ltr/assets/js/app.js') }}"></script>
     <script>
         $(document).ready(function() {
             App.init();
@@ -1393,6 +1364,5 @@
     <script src="{{ asset('Equation3/ltr/plugins/calendar/pignose/pignose.calendar.js') }}"></script>
     <script src="{{ asset('Equation3/ltr/plugins/progressbar/progressbar.min.js') }}"></script>
     <script src="{{ asset('Equation3/ltr/assets/js/default-dashboard/default-custom.js') }}"></script>
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 </body>
 </html>

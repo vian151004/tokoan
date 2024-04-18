@@ -7,10 +7,10 @@
                     <a href="#dashboard" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
                         <div class="">
                             <i class="flaticon-computer-6"></i>
-                            <span>Dashboard</span>
+                            <span>DASHBOARD</span>
                         </div>
                     </a>
-                    <div class="collapse submenu list-unstyled eq-animated eq-fadeInUp" id="dashboard"
+                    {{-- <div class="collapse submenu list-unstyled eq-animated eq-fadeInUp" id="dashboard"
                         data-parent="#topAccordion">
                         <ul class="submenu-scroll">
                             <li>
@@ -58,7 +58,7 @@
                                 </ul>
                             </li>
                         </ul>
-                    </div>
+                    </div> --}}
                 </li>
 
                 <li class="menu">
@@ -66,7 +66,7 @@
                         class="dropdown-toggle collapsed">
                         <div class="">
                             <i class="flaticon-3d-cube"></i>
-                            <span>Components</span>
+                            <span>MASTER</span>
                         </div>
                     </a>
                     <div class="submenu list-unstyled collapse eq-animated eq-fadeInUp" id="uiAndComponents"
@@ -75,23 +75,23 @@
                             <ul class="list-unstyled">
                                 <li>
                                     <a href="#ui-features" data-toggle="collapse" aria-expanded="true"
-                                        class="dropdown-toggle"> <span class="">UI KIT</span> 
+                                        class="dropdown-toggle"> <span class="">Kebutuhan</span> 
                                     </a>
                                     <ul class="list-unstyled sub-submenu collapse show eq-animated eq-fadeInUp"
                                         id="ui-features">
                                         <li>
-                                            <a href="ui_helper_classes.html"> Helper Classes </a>
+                                            <a href="ui_helper_classes.html"> Kategori </a>
                                         </li>
                                         <li>
-                                            <a href="ui_color_library.html"> Color Library </a>
+                                            <a href="ui_color_library.html"> Produk </a>
                                         </li>
                                         <li>
-                                            <a href="ui_grid.html"> Grid System </a>
+                                            <a href="ui_grid.html"> Member </a>
                                         </li>
                                         <li>
-                                            <a href="ui_typography.html"> Typography </a>
+                                            <a href="ui_typography.html"> Supllier </a>
                                         </li>
-                                        <li>
+                                        {{-- <li>
                                             <a href="ui_shadows.html"> Shadow </a>
                                         </li>
                                         <li>
@@ -221,11 +221,11 @@
                                         </li>
                                         <li>
                                             <a href="ui_nestable_list.html"> Nested List </a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </li>
                             </ul>
-                            <ul class="list-unstyled">
+                            {{-- <ul class="list-unstyled">
                                 <li>
                                     <a href="#components" data-toggle="collapse" aria-expanded="true"
                                         class="dropdown-toggle"> <span class="">COMPONENTS</span> </a>
@@ -382,7 +382,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </div>
                 </li>
@@ -392,7 +392,7 @@
                         class="dropdown-toggle collapsed">
                         <div class="">
                             <i class="flaticon-table"></i>
-                            <span>Tables &amp; Forms</span>
+                            <span>TRANSAKSI</span>
                         </div>
                     </a>
                     <div class="submenu list-unstyled collapse eq-animated eq-fadeInUp" id="tables-forms"
@@ -401,19 +401,25 @@
                             <ul class="list-unstyled">
                                 <li>
                                     <a href="#tables" data-toggle="collapse" aria-expanded="true"
-                                        class="dropdown-toggle"> <span class="">TABLES</span> </a>
+                                        class="dropdown-toggle"> <span class="">Jual &amp; Beli</span> </a>
                                     <ul class="list-unstyled sub-submenu collapse show eq-animated eq-fadeInUp"
                                         id="tables">
                                         <li>
-                                            <a href="table_basic.html"> Basic </a>
+                                            <a href="table_basic.html"> Pengeluaran </a>
                                         </li>
                                         <li>
-                                            <a href="table_tablesaw.html"> Tablesaw</a>
+                                            <a href="table_tablesaw.html"> Pembelian </a>
                                         </li>
                                         <li>
-                                            <a href="table_sticky_table_header.html"> Sticky Headers</a>
+                                            <a href="table_sticky_table_header.html"> Penjualan </a>
                                         </li>
-                                        <li class="sub-sub-submenu-list">
+                                        <li>
+                                            <a href="table_sticky_table_header.html"> Transaksi Lama </a>
+                                        </li>
+                                        <li>
+                                            <a href="table_sticky_table_header.html"> Transaksi Baru </a>
+                                        </li>
+                                        {{-- <li class="sub-sub-submenu-list">
                                             <a href="#tables-editable" data-toggle="collapse" aria-expanded="false"
                                                 class="dropdown-toggle"> Editable <i class="flaticon-right-arrow"></i>
                                             </a>
@@ -472,11 +478,11 @@
                                                 </li>
 
                                             </ul>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </li>
                             </ul>
-                            <ul class="list-unstyled">
+                            {{-- <ul class="list-unstyled">
                                 <li>
                                     <a href="#forms" data-toggle="collapse" aria-expanded="true"
                                         class="dropdown-toggle"> <span class="">FORMS</span> </a>
@@ -589,7 +595,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </div>
                 </li>
@@ -598,7 +604,7 @@
                     <a href="#pages" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle collapsed">
                         <div class="">
                             <i class="flaticon-copy"></i>
-                            <span>Pages</span>
+                            <span>REPORT</span>
                         </div>
                     </a>
                     <div class="submenu list-unstyled collapse eq-animated eq-fadeInUp" id="pages"
@@ -607,13 +613,13 @@
                             <ul class="list-unstyled">
                                 <li>
                                     <a href="#ecommerce" data-toggle="collapse" aria-expanded="true"
-                                        class="dropdown-toggle"> <span class="">ECOMMERCE</span> </a>
+                                        class="dropdown-toggle"> <span class="">Data</span> </a>
                                     <ul class="list-unstyled sub-submenu collapse show eq-animated eq-fadeInUp"
                                         id="ecommerce">
                                         <li>
-                                            <a href="ecommerce_orders.html"> Orders </a>
+                                            <a href="ecommerce_orders.html"> Laporan </a>
                                         </li>
-                                        <li>
+                                        {{-- <li>
                                             <a href="ecommerce_product.html"> Products </a>
                                         </li>
                                         <li>
@@ -683,11 +689,11 @@
                                         </li>
                                         <li>
                                             <a href="ecommerce_reviews.html"> Reviews </a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </li>
                             </ul>
-                            <ul class="list-unstyled">
+                            {{-- <ul class="list-unstyled">
                                 <li>
                                     <a href="#page" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
                                         <span class="">PAGES</span> </a>
@@ -833,7 +839,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </div>
                 </li>
@@ -842,7 +848,7 @@
                     <a href="#app" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle collapsed">
                         <div class="">
                             <i class="flaticon-mail-19"></i>
-                            <span>Apps</span>
+                            <span>SISTEM</span>
                         </div>
                     </a>
                     <div class="collapse submenu list-unstyled eq-animated eq-fadeInUp" id="app"
@@ -854,15 +860,12 @@
                                         <ul class="list-unstyled sub-submenu collapse show eq-animated eq-fadeInUp"
                                             id="apps">
                                             <li>
-                                                <a href="apps_chat.html"> Chat </a>
+                                                <a href="apps_chat.html"> User </a>
                                             </li>
                                             <li>
-                                                <a href="apps_mailbox.html"> Mailbox </a>
-                                            </li>
-                                            <li>
-                                                <a href="apps_mailbox_with_chat.html"> Mailbox With Chat </a>
-                                            </li>
-                                            <li>
+                                                <a href="apps_mailbox.html"> Pengaturan </a>
+                                            </li>                                
+                                            {{-- <li>
                                                 <a href="apps_newsletter.html"> Newsletter </a>
                                             </li>
                                             <li>
@@ -884,7 +887,7 @@
                                                         <a href="apps_drag_n_drop_calendar.html"> Drag n Drop </a>
                                                     </li>
                                                 </ul>
-                                            </li>
+                                            </li> --}}
                                         </ul>
                                     </li>
                                 </ul>
@@ -893,7 +896,7 @@
                     </div>
                 </li>
 
-                <li class="menu">
+                {{-- <li class="menu">
                     <a href="#more" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <div class="">
                             <i class="flaticon-plus"></i>
@@ -1067,7 +1070,7 @@
 
                         </div>
                     </div>
-                </li>
+                </li> --}}
 
             </ul>
         </nav>
