@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('members_id');
-            $table->unsignedBigInteger('users_id');
+            $table->unsignedBigInteger('member_id');
+            $table->unsignedBigInteger('user_id');
             $table->integer('total_item');
             $table->integer('total_price');
             $table->tinyInteger('discount')->default(0);

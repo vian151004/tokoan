@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('sales_detail', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('sales_id');
-            $table->unsignedBigInteger('products_id');
+            $table->unsignedBigInteger('product_id');
             $table->integer('sell_price');
             $table->integer('subtotal');
             $table->tinyInteger('discount')->default(0);

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('suppliers_id');
+            $table->unsignedBigInteger('supplier_id');
             $table->integer('total_item');
             $table->integer('total_price');
             $table->tinyInteger('discount')->default(0);

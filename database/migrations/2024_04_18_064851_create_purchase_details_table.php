@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('purchase_details', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('purchases_id');
-            $table->unsignedBigInteger('products_id');
+            $table->unsignedBigInteger('purchase_id');
+            $table->unsignedBigInteger('product_id');
             $table->integer('price_purchases');
             $table->integer('total');
             $table->integer('subtotal');
