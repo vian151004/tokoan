@@ -5,7 +5,8 @@
             <i class="flaticon-menu-line-3"></i>
         </a>
         <a href="index.html" class=""> <img src="{{ asset('Equation3/ltr/assets/img/1.png') }}" class="img-fluid"
-                alt="logo"></a>
+            alt="logo">
+        </a>
     </div>
     <ul class="navbar-nav flex-row mr-auto">
         <li class="nav-item ml-4 d-lg-none d-sm-block d-none">
@@ -23,25 +24,6 @@
     </ul>
 
     <ul class="navbar-nav flex-row ml-lg-auto">
-
-        <li class="nav-item dropdown language-dropdown ml-4 mr-4 pr-3 pl-3 align-self-center d-lg-inline-block d-none">
-            <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="flagDropdown" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <span class="">EN</span>
-            </a>
-            <div class="dropdown-menu position-absolute eq-animated eq-fadeInUp" aria-labelledby="flagDropdown">
-                <a class="dropdown-item" href="javascript:void(0);"><img
-                        src="{{ asset('Equation3/ltr/assets/img/fr.svg') }}" class="flag-width" alt=""> &nbsp;FR</a>
-                <a class="dropdown-item" href="javascript:void(0);"><img
-                        src="{{ asset('Equation3/ltr/assets/img/fr.svg') }}" class="flag-width" alt=""> &nbsp;JP</a>
-                <a class="dropdown-item" href="javascript:void(0);"><img
-                        src="{{ asset('Equation3/ltr/assets/img/fr.svg') }}" class="flag-width" alt=""> &nbsp;RU</a>
-                <a class="dropdown-item" href="javascript:void(0);"><img
-                        src="{{ asset('Equation3/ltr/assets/img/fr.svg') }}" class="flag-width" alt=""> &nbsp;EN</a>
-            </div>
-        </li>
-
-
         <li class="nav-item dropdown message-dropdown ml-lg-4 mr-lg-4 d-sm-block d-none align-self-center">
             <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="message-dropdown" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">

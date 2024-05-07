@@ -33,111 +33,111 @@ $(".top-search-scroll").mCustomScrollbar({
   ================
 */
 
-new Chartist.Pie('.s-r', {
-  series: [25, 75]
-}, {
-  donut: true,
-  donutWidth: 40,
-  donutSolid: true,
-  startAngle: 270,
-  showLabel: true
-});
+// new Chartist.Pie('.s-r', {
+//   series: [25, 75]
+// }, {
+//   donut: true,
+//   donutWidth: 40,
+//   donutSolid: true,
+//   startAngle: 270,
+//   showLabel: true
+// });
 
-var bar = new ProgressBar.Circle("#daily", {
-  color: '#1d1d1d',
-  // This has to be the same size as the maximum width to
-  // prevent clipping
-  strokeWidth: 5,
-  trailWidth: 3,
-  trailColor: '#f2f2f2',
-  easing: 'easeInOut',
-  duration: 1400,
-  text: {
-    autoStyleContainer: false
-  },
-  from: { color: '#24ccda', width: 5 },
-  to: { color: '#24ccda', width: 5 },
-  // Set default step function for all animate calls
-  step: function(state, circle) {
-    circle.path.setAttribute('stroke', state.color);
-    circle.path.setAttribute('stroke-width', state.width);
+// var bar = new ProgressBar.Circle("#daily", {
+//   color: '#1d1d1d',
+//   // This has to be the same size as the maximum width to
+//   // prevent clipping
+//   strokeWidth: 5,
+//   trailWidth: 3,
+//   trailColor: '#f2f2f2',
+//   easing: 'easeInOut',
+//   duration: 1400,
+//   text: {
+//     autoStyleContainer: false
+//   },
+//   from: { color: '#24ccda', width: 5 },
+//   to: { color: '#24ccda', width: 5 },
+//   // Set default step function for all animate calls
+//   step: function(state, circle) {
+//     circle.path.setAttribute('stroke', state.color);
+//     circle.path.setAttribute('stroke-width', state.width);
 
-    var value = Math.round(circle.value() * 100);
-    if (value === 0) {
-      circle.setText('');
-    } else {
-      circle.setText(value + '%');
-    }
+//     var value = Math.round(circle.value() * 100);
+//     if (value === 0) {
+//       circle.setText('');
+//     } else {
+//       circle.setText(value + '%');
+//     }
 
-  }
-});
-bar.text.style.fontSize = '1rem';
+//   }
+// });
+// bar.text.style.fontSize = '1rem';
 
-bar.animate(0.56);  // Number from 0.0 to 1.0
+// bar.animate(0.56);  // Number from 0.0 to 1.0
 
-var bar = new ProgressBar.Circle("#weekly", {
-  color: '#1d1d1d',
-  // This has to be the same size as the maximum width to
-  // prevent clipping
-  strokeWidth: 5,
-  trailWidth: 3,
-  trailColor: '#f2f2f2',
-  easing: 'easeInOut',
-  duration: 1400,
-  text: {
-    autoStyleContainer: false
-  },
-  from: { color: '#1a73e9', width: 5 },
-  to: { color: '#1a73e9', width: 5 },
-  // Set default step function for all animate calls
-  step: function(state, circle) {
-    circle.path.setAttribute('stroke', state.color);
-    circle.path.setAttribute('stroke-width', state.width);
+// var bar = new ProgressBar.Circle("#weekly", {
+//   color: '#1d1d1d',
+//   // This has to be the same size as the maximum width to
+//   // prevent clipping
+//   strokeWidth: 5,
+//   trailWidth: 3,
+//   trailColor: '#f2f2f2',
+//   easing: 'easeInOut',
+//   duration: 1400,
+//   text: {
+//     autoStyleContainer: false
+//   },
+//   from: { color: '#1a73e9', width: 5 },
+//   to: { color: '#1a73e9', width: 5 },
+//   // Set default step function for all animate calls
+//   step: function(state, circle) {
+//     circle.path.setAttribute('stroke', state.color);
+//     circle.path.setAttribute('stroke-width', state.width);
 
-    var value = Math.round(circle.value() * 100);
-    if (value === 0) {
-      circle.setText('');
-    } else {
-      circle.setText(value + '%');
-    }
+//     var value = Math.round(circle.value() * 100);
+//     if (value === 0) {
+//       circle.setText('');
+//     } else {
+//       circle.setText(value + '%');
+//     }
 
-  }
-});
-bar.text.style.fontSize = '1rem';
+//   }
+// });
+// bar.text.style.fontSize = '1rem';
 
-bar.animate(0.6);  // Number from 0.0 to 1.0
+// bar.animate(0.6);  // Number from 0.0 to 1.0
 
-var bar = new ProgressBar.Circle("#month", {
-  color: '#1d1d1d',
-  // This has to be the same size as the maximum width to
-  // prevent clipping
-  strokeWidth: 5,
-  trailWidth: 3,
-  trailColor: '#f2f2f2',
-  easing: 'easeInOut',
-  duration: 1400,
-  text: {
-    autoStyleContainer: false
-  },
-  from: { color: '#00b1f4', width: 5 },
-  to: { color: '#00b1f4', width: 5 },
-  // Set default step function for all animate calls
-  step: function(state, circle) {
-    circle.path.setAttribute('stroke', state.color);
-    circle.path.setAttribute('stroke-width', state.width);
+// var bar = new ProgressBar.Circle("#month", {
+//   color: '#1d1d1d',
+//   // This has to be the same size as the maximum width to
+//   // prevent clipping
+//   strokeWidth: 5,
+//   trailWidth: 3,
+//   trailColor: '#f2f2f2',
+//   easing: 'easeInOut',
+//   duration: 1400,
+//   text: {
+//     autoStyleContainer: false
+//   },
+//   from: { color: '#00b1f4', width: 5 },
+//   to: { color: '#00b1f4', width: 5 },
+//   // Set default step function for all animate calls
+//   step: function(state, circle) {
+//     circle.path.setAttribute('stroke', state.color);
+//     circle.path.setAttribute('stroke-width', state.width);
 
-    var value = Math.round(circle.value() * 100);
-    if (value === 0) {
-      circle.setText('');
-    } else {
-      circle.setText(value + '%');
-    }
+//     var value = Math.round(circle.value() * 100);
+//     if (value === 0) {
+//       circle.setText('');
+//     } else {
+//       circle.setText(value + '%');
+//     }
 
-  }
-});
-bar.text.style.fontSize = '1rem';
+//   }
+// });
+// bar.text.style.fontSize = '1rem';
 
-bar.animate(0.77);  // Number from 0.0 to 1.0
+// bar.animate(0.77);  // Number from 0.0 to 1.0
 
 
 // New Product table
@@ -227,71 +227,71 @@ var responsiveOptions = [
   }]
 ];
 
-new Chartist.Bar('.v-pv-weekly', data, options, responsiveOptions);
+// new Chartist.Bar('.v-pv-weekly', data, options, responsiveOptions);
 
 
-$('.monthly-chart-tab li a').on('shown.bs.tab', function(event) {
+// $('.monthly-chart-tab li a').on('shown.bs.tab', function(event) {
 
-  new Chartist.Bar('.v-pv-weekly', data, options, responsiveOptions);
+//   new Chartist.Bar('.v-pv-weekly', data, options, responsiveOptions);
 
-  var responsiveOptionsMonthly = [
-    ['screen and (max-width: 575px)', {
-      axisX: {
-        labelInterpolationFnc: function (value) {
-          return value[0];
-        }
-      }
-    }]
-  ];
+//   var responsiveOptionsMonthly = [
+//     ['screen and (max-width: 575px)', {
+//       axisX: {
+//         labelInterpolationFnc: function (value) {
+//           return value[0];
+//         }
+//       }
+//     }]
+//   ];
 
-  new Chartist.Line('.v-pv-monthly', {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    series: [
-      [5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8],
-      [3, 2, 9, 5, 4, 6, 4, 6, 7, 8, 7, 4]
-    ]
-  }, {
-    fullWidth: true,
-    // As this is axis specific we need to tell Chartist to use whole numbers only on the concerned axis
-    axisY: {
-      onlyInteger: true,
-      offset: 20,
-      labelInterpolationFnc: function (value) {
-        return value + 'k';
-      },
-    }
-  },responsiveOptionsMonthly);
+//   new Chartist.Line('.v-pv-monthly', {
+//     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+//     series: [
+//       [5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8],
+//       [3, 2, 9, 5, 4, 6, 4, 6, 7, 8, 7, 4]
+//     ]
+//   }, {
+//     fullWidth: true,
+//     // As this is axis specific we need to tell Chartist to use whole numbers only on the concerned axis
+//     axisY: {
+//       onlyInteger: true,
+//       offset: 20,
+//       labelInterpolationFnc: function (value) {
+//         return value + 'k';
+//       },
+//     }
+//   },responsiveOptionsMonthly);
 
 
-  var responsiveOptionsYearly = [
-    ['screen and (max-width: 575px)', {
-      axisX: {
-        labelInterpolationFnc: function (value) {
-          return value[2] + value[3];
-        }
-      }
-    }]
-  ];
+//   var responsiveOptionsYearly = [
+//     ['screen and (max-width: 575px)', {
+//       axisX: {
+//         labelInterpolationFnc: function (value) {
+//           return value[2] + value[3];
+//         }
+//       }
+//     }]
+//   ];
 
-  new Chartist.Line('.v-pv-yearly', {
-    labels: ['2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-    series: [
-      [5, 9, 7, 8, 5, 3, 5, 4],
-      [3, 6, 2, 4, 7, 8, 3, 9]
-    ]
-  }, {
-    low: 0,
-    showArea: true,
-    axisY: {
-        onlyInteger: true,
-        offset: 20,
-        labelInterpolationFnc: function (value) {
-          return value + 'k';
-        },
-      }
-  },responsiveOptionsYearly);
+//   new Chartist.Line('.v-pv-yearly', {
+//     labels: ['2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+//     series: [
+//       [5, 9, 7, 8, 5, 3, 5, 4],
+//       [3, 6, 2, 4, 7, 8, 3, 9]
+//     ]
+//   }, {
+//     low: 0,
+//     showArea: true,
+//     axisY: {
+//         onlyInteger: true,
+//         offset: 20,
+//         labelInterpolationFnc: function (value) {
+//           return value + 'k';
+//         },
+//       }
+//   },responsiveOptionsYearly);
 
-})
+// })
 
 
 // Calender script
