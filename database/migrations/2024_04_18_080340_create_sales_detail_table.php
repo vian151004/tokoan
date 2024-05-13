@@ -18,8 +18,7 @@ return new class extends Migration
             $table->integer('sell_price');
             $table->integer('subtotal');
             $table->tinyInteger('discount')->default(0);
-            $table->timestamp('created_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamps();
         });
     }
 

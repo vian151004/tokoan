@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('description');
             $table->integer('nominal');
-            $table->timestamp('created_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamps();
         });
     }
 

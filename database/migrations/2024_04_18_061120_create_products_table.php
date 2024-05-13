@@ -20,8 +20,7 @@ return new class extends Migration
             $table->tinyInteger('discount')->default(0);
             $table->integer('selling_price');
             $table->integer('supply');
-            $table->timestamp('created_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamps();
         });
     }
 

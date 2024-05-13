@@ -18,8 +18,7 @@ return new class extends Migration
             $table->integer('total_price');
             $table->tinyInteger('discount')->default(0);
             $table->integer('pay')->default(0);
-            $table->string('created_at')->nullable(); 
-            $table->string('updated_at')->nullable(); 
+            $table->timestamps(); 
         });
     }
 

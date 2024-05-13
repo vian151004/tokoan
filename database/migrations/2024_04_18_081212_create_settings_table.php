@@ -18,8 +18,7 @@ return new class extends Migration
             $table->string('phone');
             $table->tinyInteger('note_type');
             $table->string('path_logo');
-            $table->timestamp('created_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamps();
         });
     }
 

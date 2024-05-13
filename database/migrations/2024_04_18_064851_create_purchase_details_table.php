@@ -18,8 +18,7 @@ return new class extends Migration
             $table->integer('price_purchases');
             $table->integer('total');
             $table->integer('subtotal');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamps();
         });
     }
 

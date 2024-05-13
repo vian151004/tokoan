@@ -20,8 +20,7 @@ return new class extends Migration
             $table->tinyInteger('discount')->default(0);
             $table->integer('pay')->default(0);
             $table->integer('accepted')->default(0);
-            $table->string('created_at')->nullable();
-            $table->string('updated_at')->nullable();
+            $table->timestamps();
         });
     }
 
