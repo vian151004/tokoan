@@ -18,6 +18,25 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
 
+    protected $guarded = ['id'];
+
+    public function role()
+    {
+        return $this->hasOne(Role::class, 'id', 'role_id'); //(Role::class, 'forign key', 'local key')
+    }
+
+    public function hasRole($role)
+    {
+        return $this->role->name == $role; //jika name sma dengan $role, hasilnya true dan kebalikannya
+    }
+
+    function scopeSemiAdmin($query)
+    {
+        return $query->whereHas('role', function ($query) {
+            $query->where('name', 'semiAdmin');
+        });  
+    }
+
     /**
      * The attributes that are mass assignable.
      *

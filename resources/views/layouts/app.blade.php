@@ -16,6 +16,12 @@
         <link href="{{ asset('Equation3/ltr/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('Equation3/ltr/assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
 
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="{{ asset('Equation3/ltr/plugins/font-icons/fontawesome/css/regular.css') }}">
+        <link rel="stylesheet" href="{{ asset('Equation3/ltr/plugins/font-icons/fontawesome/css/solid.css') }}">
+        <link rel="stylesheet" href="{{ asset('Equation3/ltr/plugins/font-icons/fontawesome/css/brands.css') }}">
+        <link rel="stylesheet" href="{{ asset('Equation3/ltr/plugins/font-icons/fontawesome/css/fontawesome.css') }}">
+        
         <link href="{{ asset('Equation3/ltr/plugins/maps/vector/jvector/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('Equation3/ltr/plugins/charts/chartist/chartist.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('Equation3/ltr/assets/css/default-dashboard/style.css') }}" rel="stylesheet" type="text/css" />
@@ -26,6 +32,14 @@
         {{-- BAR CHART --}}
         <link href="{{ asset('Equation3/ltr/plugins/charts/chartist/chartist.css') }}" rel="stylesheet" type="text/css" />
 
+        {{-- Modal --}}
+        <link href="{{ asset('Equation3/ltr/plugins/animate/animate.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('Equation3/ltr/plugins/animate/animate.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('Equation3/ltr/plugins/animate/animate.css') }}" rel="stylesheet" type="text/css" />
+
+        {{-- Toast --}}
+        <link href="{{ asset('Equation3/ltr/plugins/notification/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css" />
+        
         @stack('css_vendor')
 
         <style>
@@ -41,6 +55,20 @@
 
             .crumbs .breadcrumb li {
                 margin-top: 8px;
+            }
+
+            .table-bordered td, .table-bordered th { border: 1px solid #e9ecef; }
+
+            .text-info {
+                color: #17a2b8 !important;
+                box-shadow: none !important;
+            }
+            .text-danger {
+                color: #dc3545 !important;
+                box-shadow: none !important;
+            }
+            .fas {
+                margin-left: 12px !important;
             }
         </style>
 
@@ -133,11 +161,23 @@
         <script src="{{ asset('Equation3/ltr/plugins/charts/d3charts/d3.v3.min.js') }}"></script>
         <script src="{{ asset('Equation3/ltr/plugins/charts/c3charts/c3.min.js') }}"></script>
         <script src="{{ asset('Equation3/ltr/plugins/charts/c3charts/c3-chart-script.js') }}"></script>
-        
+
+        {{-- Modal --}}
+        <script src="{{ asset('Equation3/ltr/assets/js/modal/classie.js') }}"></script>
+        <script src="{{ asset('Equation3/ltr/assets/js/modal/classie.js') }}"></script>
+
+        <script src="{{ asset('Equation3/ltr/assets/js/default-dashboard/default-custom.js') }}"></script>
+
+        {{-- Toastr --}}
+        <script src="{{ asset('Equation3/ltr/plugins/notification/toastr/toastr.min.js') }}"></script>
+        <script src="{{ asset('Equation3/ltr/assets/js/ui-kit/notification/custom-toastr.js') }}"></script>
+
         @livewireScripts
         @stack('scripts_vendor')
 
-        <script src="{{ asset('Equation3/ltr/assets/js/default-dashboard/default-custom.js') }}"></script>
+        <script src="{{ asset('js/custom.js') }}"></script>
+
+        <x-toast />
         @stack('scripts')
     </body>
 </html>

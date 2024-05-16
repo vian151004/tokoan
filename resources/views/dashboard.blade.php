@@ -4,7 +4,7 @@
 
 @section('breadcrumb')
 @parent
-<li class="breadcrumb-item-active">Dashboard</li>
+<li class="breadcrumb-item active">Dashboard</li>
 @endsection
 
 @section('content')

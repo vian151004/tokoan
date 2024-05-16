@@ -15,7 +15,7 @@ class RoleTableSeeder extends Seeder
     {
         $roles = [
             'admin', //1
-            'donatur' //2
+            'semiAdmin' //2
         ];
 
         collect($roles)->map(function($name){
