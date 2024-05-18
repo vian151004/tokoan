@@ -159,6 +159,9 @@ return [
         /*
          * Package Service Providers...
          */
+        Yajra\DataTables\DataTablesServiceProvider::class,
+        Yajra\DataTables\ButtonsServiceProvider::class,
+        Yajra\DataTables\FractalServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -185,6 +188,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'DataTables' => \Yajra\DataTables\Facades\DataTables::class,
     ])->toArray(),
 
 ];

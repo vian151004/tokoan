@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Kategori')
+@section('title', 'Produk')
 
 @section('breadcrumb')
 @parent
-<li class="breadcrumb-item active">Kategori</li>
+<li class="breadcrumb-item active">Produk</li>
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
         <div class="statbox widget box box-shadow">
             <x-card>
                 <x-slot name="header" class="widget-header">
-                    <button onclick="addForm(`{{ route('category.store') }}`)" class="btn btn-outline-primary mt-2 mb-3 mr-2">
+                    <button onclick="addForm(`{{ route('product.store') }}`)" class="btn btn-outline-primary mt-2 mb-3 mr-2">
                         <i class="fas fa-plus-circle"></i>
                         Tambah
                     </button>
@@ -22,7 +22,13 @@
                 <x-table>
                     <x-slot name="thead" >
                         <th class="checkbox-column text-center" width="5%">No</th>
-                        <th>Kategori</th>
+                        <th>Kode</th>
+                        <th>Produk</th>
+                        <th>Merek</th>
+                        <th>Harga Beli</th>
+                        <th>Diskon</th>
+                        <th>Harga Jual</th>
+                        <th>Stok</th>
                         <th width="15%" class="text-center"><i class="fas fa-cog"></i></th>                          
                     </x-slot>
                 </x-table>
@@ -31,7 +37,7 @@
     </div>
 </div>
 
-@includeIf('category.form')
+@includeIf('product.form')
 @endsection
 
 @includeIf('includes.datatable')
@@ -41,28 +47,36 @@
         let table;
 
         table = $('#customer-info-detail-3').DataTable({
-                    processing: true,
-                    autoWidth: false,
-                    ajax: {
-                        url: '{{ route('category.data') }}'
-                    },
-                    columns: [
-                        {data: 'DT_RowIndex', searchable: false, sortable: false},
-                        {data: 'name'},
-                        {data: 'action', searchable: false, sortable: false},
-                    ],
-                });
+            processing: true,
+            autoWidth: false,
+            ajax: {
+                url: '{{ route('product.data') }}'
+            },
+            columns: [
+                {data: 'DT_RowIndex', searchable: false, sortable: false},
+                {data: 'product_code'},
+                {data: 'name'},
+                {data: 'merk'},
+                {data: 'purchase_price', searchable: false, sortable: false},
+                {data: 'discount', searchable: false, sortable: false},
+                {data: 'selling_price', searchable: false, sortable: false},
+                {data: 'supply', searchable: false, sortable: false},   
+                {data: 'action', searchable: false, sortable: false},
+            ],
+        });
 
         function addForm(url, title = 'Tambah') {
-            $('#btnSimpan').show();
-            $('#btnUpdate').hide();
-            
-            $('.modal').modal('show');
-            $(`${'.modal'} .modal-title`).text(title);
-            $(`${'.modal'} form`).attr('action', url);
-            $(`${'.modal'} [name=_method]`).val('post');
-            
-            resetForm(`${'.modal'} form`);
+            $(document).ready(function() {
+                $('#btnSimpan').show();
+                $('#btnUpdate').hide();
+                
+                $('.modal').modal('show');
+                $(`${'.modal'} .modal-title`).text(title);
+                $(`${'.modal'} form`).attr('action', url);
+                $(`${'.modal'} [name=_method]`).val('post');
+                
+                resetForm(`${'.modal'} form`);
+            });
         };
 
         function editForm(url, title = 'Edit') {

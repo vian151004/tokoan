@@ -1,7 +1,11 @@
 <?php
 
-function format_uang ($angka) {
-    return number_format($angka, '0', ',', '.');
+use PhpParser\Node\Scalar\MagicConst\Function_;
+
+if (!function_exists('format_uang')) {
+    function format_uang($angka) {
+        return number_format($angka, 0, ',', '.');
+    }
 }
 
 function terbilang ($angka) {
@@ -55,4 +59,10 @@ if (! function_exists('tanggal_indonesia')) {
         
         return $text; 
     }
+
+if (! function_exists('tambah_nol_kode')) {
+    function  tambah_nol_kode($value, $treshold = null) {
+        return sprintf("%0". $treshold . "s", $value);
+    }
+}
 }

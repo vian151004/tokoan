@@ -12,8 +12,4 @@ class Category extends Model
     protected $primaryKey = 'id';
     protected $guarded = [];
 
-    public function products()
-    {
-        return $this->hasMany(Product::class, 'category_id', 'id');
-    }
 }

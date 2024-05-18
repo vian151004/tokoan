@@ -34,5 +34,7 @@ Route::group([
         ->name('category.data');
     Route::resource('/category', CategoryController::class);
 
-    
+    Route::get('/product/data', [ProductController::class, 'data'])
+        ->name('product.data');
+    Route::resource('/product', ProductController::class);
 });

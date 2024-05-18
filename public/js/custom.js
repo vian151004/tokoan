@@ -17,26 +17,62 @@ function resetForm(selector) {
     $('.invalid-feedback').remove();
 }
 
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
 
 function loopForm(originalForm) {
     for (field in originalForm) {
-        if ($(`[name=${field}]`).attr('type') != 'file') {
-            // if ($(`[name=${field}]`).hasClass('summernote')) {
-            //     $(`[name=${field}]`).summernote('code', originalForm[field]);
-            // } else if ($(`[name=${field}]`).attr('type') == 'radio') {
-            //     $(`[name=${field}]`).filter(`[value="${originalForm[field]}"]`).prop(`checked`, true);
-            // } else {
-            //     $(`[name=${field}]`).val(originalForm[field]);
-            // }
+        if ($(`[name=${field}]`).attr('type') != 'file') 
+            {            
+                $(`[name=${field}]`).val(originalForm[field]);
+            }
 
-            $('select').trigger('change');
-        } else{
-            // $(`.preview-${field}`)
-            //     .attr('src', originalForm[field])
-            //     .show();
-        }
+        $('select').trigger('change');
     }
 }
+
+function loopErrors(errors) {
+    $('.invalid-feedback').remove();
+
+    if (errors == undefined) {
+        return; 
+    }
+
+    for (error in errors) {
+        $(`[name=${error}]`).addClass('is-invalid');
+
+        if ($(`[name=${error}]`).hasClass('tagging')) {
+            $(`<span class="error invalid-feedback">${errors[error][0]}</span>`) 
+                .insertAfter($(`[name=${error}]`).next());
+        } else if ($(`[name=${error}]`).hasClass('summernote')) {
+            $('.note-editor').addClass('is-invalid');
+            $(`<span class="error invalid-feedback">${errors[error][0]}</span>`) 
+                .insertAfter($(`[name=${error}]`).next());
+        } else if ($(`[name=${error}]`).hasClass('placeholder')) {
+            $(`<span class="error invalid-feedback">${errors[error][0]}</span>`) 
+                .insertAfter($(`[name=${error}]`).next());
+        } else {
+            if ($(`[name=${error}]`).length == 0) {
+             $(`[name="${error}[]"]`).addClass('is-invalid');
+             $(`<span class="error invalid-feedback">${errors[error][0]}</span>`) 
+                .insertAfter($(`[name="${error}[]"]`).next());
+            } else {
+                if ($(`[name=${error}]`).next().hasClass('date') || $(`[name=${error}]`).next().hasClass('input-group-prepend')) {
+                    $(`<span class="error invalid-feedback">${errors[error][0]}</span>`) .insertAfter($(`[name=${error}]`).next());
+                    $('.date .date-text').css('border-radius', '0 .25rem .25rem 0');
+                    $('.date-text').css('border-color', 'red');
+                    $('.input-group-prepend').next().css('border-radius', '0 .25rem .25rem 0');
+                } else {
+                    $(`<span class="error invalid-feedback">${errors[error][0]}</span>`) 
+                        .insertAfter($(`[name=${error}]`));
+                }
+            }
+        }
+    }
+} 
 
 function showAlert(message, type) {
     let title = '';
