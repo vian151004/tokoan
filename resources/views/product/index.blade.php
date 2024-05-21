@@ -17,21 +17,34 @@
                         <i class="fas fa-plus-circle"></i>
                         Tambah
                     </button>
+                    <button onclick="deleteSelected(`{{ route('product.delete_selected') }}`)" class="btn btn-outline-danger mt-2 mb-3 mr-2">
+                        <i class="fas fa-trash"></i>
+                        Hapus
+                    </button>
                 </x-slot>
 
-                <x-table>
-                    <x-slot name="thead" >
-                        <th class="checkbox-column text-center" width="5%">No</th>
-                        <th>Kode</th>
-                        <th>Produk</th>
-                        <th>Merek</th>
-                        <th>Harga Beli</th>
-                        <th>Diskon</th>
-                        <th>Harga Jual</th>
-                        <th>Stok</th>
-                        <th width="15%" class="text-center"><i class="fas fa-cog"></i></th>                          
-                    </x-slot>
-                </x-table>
+                <form action="" id="table-product">
+                    <x-table class="table-product">
+                        <x-slot name="thead" >
+                            <th class="form-check-column">
+                                <label  for="checkAll" class="new-control new-checkbox checkbox-primary">
+                                  <input type="checkbox" name="checkAll" id="checkAll" class="new-control-input">
+                                  <span class="new-control-indicator mt-2"></span><span class="invisible">s</span>
+                                </label>
+                            </th>
+                            <th class="checkbox-column">No</th>
+                            <th>Kode</th>
+                            <th>Produk</th>
+                            <th>Merek</th>
+                            <th>Harga Beli</th>
+                            <th>Diskon</th>
+                            <th>Harga Jual</th>
+                            <th>Stok</th>
+                            <th width="12%" class="text-center"><i class="fas fa-cog"></i></th>                          
+                        </x-slot>
+                    </x-table>    
+                </form>                    
+            
             </x-card>
         </div>
     </div>
@@ -53,7 +66,8 @@
                 url: '{{ route('product.data') }}'
             },
             columns: [
-                {data: 'DT_RowIndex', searchable: false, sortable: false},
+                {data: 'checkAll', searchable: false, sortable: false},
+                {data: 'DT_RowIndex'},
                 {data: 'product_code'},
                 {data: 'name'},
                 {data: 'merk'},
@@ -63,6 +77,11 @@
                 {data: 'supply', searchable: false, sortable: false},   
                 {data: 'action', searchable: false, sortable: false},
             ],
+
+        });
+
+        $('[name=checkAll]').on('click', function () {
+            $(':checkbox').prop('checked', this.checked);
         });
 
         function addForm(url, title = 'Tambah') {
@@ -136,6 +155,28 @@
                         showAlert('Tidak dapat menghapus data!');
                         return;
                     });
+            }
+        }
+
+        function deleteSelected(url) {
+            var checkedInputs = $('input:checked').not('[name=checkAll]');
+
+            if (checkedInputs.length > 0){
+                if (confirm('Yakin ingin menghapus data terpilih?')) {                    
+                    $.post(url, $('#table-product').serialize())
+                        .done((response) => {
+                            showAlert(response.message,'success');
+                            $('input:checkbox').prop('checked', false);
+                            table.ajax.reload();
+                        })
+                        .fail(errors => {
+                            showAlert('Tidak dapat menghapus data!');
+                            return;
+                        });
+                }
+            } else {
+                alert('Pilih data mana yang akan dihapus');
+                return;
             }
         }
     </script>

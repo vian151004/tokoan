@@ -70,6 +70,9 @@
             .fas {
                 margin-left: 12px !important;
             }
+
+            .table td, .table th { border-top: 1px solid #f1f3f1; }
+            .table-controls>li>a i { color: #d3d3d3; }
         </style>
 
         @stack('css')
@@ -177,6 +180,10 @@
 
         <script src="{{ asset('js/custom.js') }}"></script>
 
+        <script>
+            checkall('todoAll', 'todochkbox');
+            $('[data-toggle="tooltip"]').tooltip()
+        </script>
         <x-toast />
         @stack('scripts')
     </body>

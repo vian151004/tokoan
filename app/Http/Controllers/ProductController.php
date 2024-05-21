@@ -25,8 +25,10 @@ class ProductController extends Controller
 
         return datatables($query)
             ->addIndexColumn()
-            ->editColumn('name', function ($query) {
-                return $query->name;
+            ->addColumn('checkAll', function ($query) {
+                return '
+                    <input type="checkbox" name="product_id[]" value="'. $query->id .'">
+                ';
             })
             ->addColumn('product_code', function ($query) {
                 return '<span class="badge badge-success">'.($query->product_code) .'</span>';
@@ -53,7 +55,7 @@ class ProductController extends Controller
                     </div>
                 ';
             })
-            ->rawColumns(['action', 'product_code'])
+            ->rawColumns(['action', 'product_code', 'checkAll'])
             ->escapeColumns()
             ->make(true);
     }
@@ -76,12 +78,11 @@ class ProductController extends Controller
             return response()->json(['errors' => $validator->errors()], 422);
         }
 
-        $product = Product::latest()->first();
+        // $product = Product::latest()->first() ?? new Product();
+        // $request['product_code'] = 'P'. tambah_nol_kode((int)$product->id +1, 6);
+        $product = Product::latest()->first() ?? new Product();
         $request['product_code'] = 'P'. tambah_nol_kode((int)$product->id +1, 6);
-        
-        $data = $request->all();
-        $product = Product::create($data);
-
+        $product = Product::create($request->all());
         return response()->json(['data' => $product, 'message' => 'Produk berhasil ditambakan']);
         
     }
@@ -131,4 +132,29 @@ class ProductController extends Controller
 
         return response()->json(['data' => null, 'message' => 'Produk berhasil dihapus']);
     }
+
+    // public function deleteSelected(Product $product)
+    // {
+    //     $product->delete();
+
+    //     return response()->json(['data' => null, 'message' => 'Baris produk berhasil dihapus']);
+    // }
+
+    public function deleteSelected(Request $request, Product $product)
+    {
+        $ids = $request->input('product_id');
+        if (is_array($ids)) {
+            Product::whereIn('id', $ids)->delete();
+            return response()->json([
+                'data' => null,
+                'message' => 'Baris produk berhasil dihapus'
+            ]);
+        } else {
+            return response()->json([
+                'data' => null,
+                'message' => 'Tidak ada produk yang dipilih untuk dihapus'
+            ], 400);
+        }
+    }
+
 }

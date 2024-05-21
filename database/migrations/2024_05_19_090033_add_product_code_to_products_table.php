@@ -6,17 +6,12 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::table('products', function (Blueprint $table) {
             $table->string('product_code')
                 ->unique()
                 ->after('category_id');
-
-            $table->unique(['name', 'product_code']);
         });
     }
 
