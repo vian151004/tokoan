@@ -21,9 +21,15 @@
                         <i class="fas fa-trash"></i>
                         Hapus
                     </button>
+                    <button onclick="printBarcode(`{{ route('product.print_barcode') }}`)" class="btn btn-outline-info mt-2 mb-3 mr-2">
+                        <i class="fas fa-barcode"></i>
+                        Cetak Barcode
+                    </button>
                 </x-slot>
 
-                <form action="" id="table-product">
+                <form action="" method="POST" id="table-product">
+                    @csrf
+                    
                     <x-table class="table-product">
                         <x-slot name="thead" >
                             <th class="form-check-column">
@@ -40,11 +46,10 @@
                             <th>Diskon</th>
                             <th>Harga Jual</th>
                             <th>Stok</th>
-                            <th width="12%" class="text-center"><i class="fas fa-cog"></i></th>                          
+                            <th width="17%" class="text-center"><i class="fas fa-cog"></i></th>                          
                         </x-slot>
                     </x-table>    
-                </form>                    
-            
+                </form>                        
             </x-card>
         </div>
     </div>
@@ -67,13 +72,13 @@
             },
             columns: [
                 {data: 'checkAll', searchable: false, sortable: false},
-                {data: 'DT_RowIndex'},
+                {data: 'DT_RowIndex', searchable: false, sortable: false},
                 {data: 'product_code'},
                 {data: 'name'},
                 {data: 'merk'},
-                {data: 'purchase_price', searchable: false, sortable: false},
+                {data: 'purchase_price', searchable: true, sortable: false},
                 {data: 'discount', searchable: false, sortable: false},
-                {data: 'selling_price', searchable: false, sortable: false},
+                {data: 'selling_price', searchable: true, sortable: false},
                 {data: 'supply', searchable: false, sortable: false},   
                 {data: 'action', searchable: false, sortable: false},
             ],
@@ -98,25 +103,28 @@
             });
         };
 
-        function editForm(url, title = 'Edit') {
-            $('#btnSimpan').hide();
-            $('#btnUpdate').show();
+        // function editForm(url, title = 'Edit') {
+        //     // console.log('editForm called with URL:', url);
+        //     $('#btnSimpan').hide();
+        //     $('#btnUpdate').show();
 
-            $.get(url)
-                .done(response => {
-                    $('.modal').modal('show');
-                    $(`${'.modal'} .modal-title`).text(title);
-                    $(`${'.modal'} form`).attr('action', url);
-                    $(`${'.modal'} [name=_method]`).val('put');
-
-                    resetForm(`${'.modal'} form`);
-                    loopForm(response.data);                                    
-                })
-                .fail(errors => {
-                    alert('Tidak dapat menampilkan data');
-                    return;
-                });
-        }
+        //     $.get(url)
+        //         .done(response => {
+        //             $('.modal').modal('show');
+        //             $(`${'.modal'} .modal-title`).text(title);
+        //             $(`${'.modal'} form`).attr('action', url);
+        //             $(`${'.modal'} [name=_method]`).val('put');
+        //             for (let key in data) {
+        //                 $(`#${key}`).val(data[key]);
+        //             }
+        //             resetForm(`${'.modal'} form`);
+        //             loopForm(response.data);                                    
+        //         })
+        //         .fail(errors => {
+        //             alert('Tidak dapat menampilkan data');
+        //             return;
+        //         });
+        // }        
 
         function submitForm(originalForm) {
             $.post({
@@ -142,21 +150,21 @@
             });
         }
 
-        function deleteData(url) {
-            if (confirm('Yakin data akan dihapus?')) {
-                $.post(url, {
-                        '_method': 'delete'
-                    })
-                    .done(response => {
-                        showAlert(response.message,'success');
-                        table.ajax.reload();
-                    })
-                    .fail(errors => {
-                        showAlert('Tidak dapat menghapus data!');
-                        return;
-                    });
-            }
-        }
+        // function deleteData(url) {
+        //     if (confirm('Yakin data akan dihapus?')) {
+        //         $.post(url, {
+        //                 '_method': 'delete'
+        //             })
+        //             .done(response => {
+        //                 showAlert(response.message,'success');
+        //                 table.ajax.reload();
+        //             })
+        //             .fail(errors => {
+        //                 showAlert('Tidak dapat menghapus data!');
+        //                 return;
+        //             });
+        //     }
+        // }
 
         function deleteSelected(url) {
             var checkedInputs = $('input:checked').not('[name=checkAll]');
@@ -178,6 +186,23 @@
                 alert('Pilih data mana yang akan dihapus');
                 return;
             }
+        }
+
+        function printBarcode(url) {
+            var checkedInputs = $('input:checked').not('[name=checkAll]');
+
+            if (checkedInputs.length < 1){
+                alert('Pilih data yang akan dicetak');
+                return;
+            } else if (checkedInputs.length < 3) {
+                alert('Pilih minimal 3 data yang akan dicetak');
+                return;                
+            } else {
+                $('#table-product')
+                    .attr('target', '_blank')
+                    .attr('action', url)
+                    .submit();
+            }                
         }
     </script>
 @endpush

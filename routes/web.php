@@ -38,5 +38,7 @@ Route::group([
         ->name('product.data');
     Route::post('/product/delete-selected', [ProductController::class, 'deleteSelected'])
         ->name('product.delete_selected');
+    Route::post('/product/print-barcode', [ProductController::class, 'printBarcode'])
+        ->name('product.print_barcode');
     Route::resource('/product', ProductController::class);
 });

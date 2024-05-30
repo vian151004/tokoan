@@ -4,7 +4,7 @@
         <nav id="modernSidebar">
             <ul class="menu-categories pl-0 m-0" id="topAccordion">
                 <li class="menu">
-                    <a href="{{ route('dashboard') }}" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
+                    <a href="{{ route('dashboard') }}">
                         <div class="">
                             <i class="flaticon-computer-6"></i>
                             <span>DASHBOARD</span>

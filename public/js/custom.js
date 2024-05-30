@@ -1,20 +1,34 @@
-function resetForm(selector) {
-    $(selector)[0].reset();
+// function resetForm(selector) {
+//     $(selector)[0].reset();
 
-    if ($(selector).find('.summernote').length != 0) {
-        $(selector).find('.summernote').summernote('code', '');
-    }
+//     // if ($(selector).find('.summernote').length != 0) {
+//     //     $(selector).find('.summernote').summernote('code', '');
+//     // }
 
-    if ($(selector).find('.img-thumbnail').length != 0) {
-        $(selector).find('.img-thumbnail').attr('src', "");
-    }
+//     // if ($(selector).find('.img-thumbnail').length != 0) {
+//     //     $(selector).find('.img-thumbnail').attr('src', "");
+//     // }
     
-    $('.custom-file-input').next('label').html('Pilih file');
-    $('.preview-path_image').attr('src', '').hide();
-    $('.select2').trigger('change');
-    $('.tagging, .placeholder').trigger('change');
-    $('.form-control, .custom-select, [type=radio], [type=checkbox], [type=file], .select2, .note-editor').removeClass('is-invalid');
+//     // $('.custom-file-input').next('label').html('Pilih file');
+//     // $('.preview-path_image').attr('src', '').hide();
+//     // $('.select2').trigger('change');
+//     // $('.tagging, .placeholder').trigger('change');
+//     // $('.form-control, .custom-select, [type=radio], [type=checkbox], [type=file], .select2, .note-editor').removeClass('is-invalid');
+//     $('.invalid-feedback').remove();
+// }
+
+function resetForm(selector) {
+    $(selector)[0].reset()
+    $('.is-invalid').removeClass('is-invalid');
     $('.invalid-feedback').remove();
+}
+
+function loopForm(data) {
+    for (let name in data) {
+        if (data.hasOwnProperty(name)) {
+            $(`[name=${name}]`).val(data[name]);
+        }
+    }
 }
 
 $.ajaxSetup({
@@ -23,16 +37,16 @@ $.ajaxSetup({
     }
 });
 
-function loopForm(originalForm) {
-    for (field in originalForm) {
-        if ($(`[name=${field}]`).attr('type') != 'file') 
-            {            
-                $(`[name=${field}]`).val(originalForm[field]);
-            }
+// function loopForm(originalForm) {
+//     for (field in originalForm) {
+//         if ($(`[name=${field}]`).attr('type') != 'file') 
+//             {            
+//                 $(`[name=${field}]`).val(originalForm[field]);
+//             }
 
-        $('select').trigger('change');
-    }
-}
+//         $('select').trigger('change');
+//     }
+// }
 
 function loopErrors(errors) {
     $('.invalid-feedback').remove();
@@ -106,4 +120,29 @@ function showAlert(message, type) {
             }, 3000);
         });
     }
+}
+
+function format_uang(input) {
+    a = input.value;
+    if (a == undefined) {
+        a = input.toString();
+    }
+    b = a.replace(/[^\d]/g, "");
+    c = "";
+    length = b.length;
+
+    j = 0;
+    for (i = length; i > 0; i--) {
+        j = j + 1;
+        if (((j % 3) == 1) && (j != 1)) {
+            c = b.substr(i - 1, 1) + "." + c;
+        } else {
+            c = b.substr(i - 1, 1) + c;
+        }
+    }
+    if (input.value == undefined) {
+        return c;
+    }
+    
+    input.value = c;
 }
