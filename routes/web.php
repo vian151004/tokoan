@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,8 @@ Route::middleware([
 });
 
 Route::group([
-    'middleware' => 'auth'
+'middleware' => 'auth',
+'prefix' => '/master'
 ], function () {
     Route::get('/category/data', [CategoryController::class, 'data'])
         ->name('category.data');
@@ -41,4 +43,10 @@ Route::group([
     Route::post('/product/print-barcode', [ProductController::class, 'printBarcode'])
         ->name('product.print_barcode');
     Route::resource('/product', ProductController::class);
+
+    Route::get('/member/data', [MemberController::class, 'data'])
+        ->name('member.data');
+    Route::post('/member/print-card', [MemberController::class, 'printCard'])
+        ->name('member.print_card');
+    Route::resource('/member', MemberController::class);
 });

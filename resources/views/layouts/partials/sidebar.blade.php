@@ -37,7 +37,7 @@
                                             <a href="{{ route('product.index') }}"> Produk </a>
                                         </li>
                                         <li>
-                                            <a href="ui_grid.html"> Member </a>
+                                            <a href="{{ route('member.index') }}"> Member </a>
                                         </li>
                                         <li>
                                             <a href="ui_typography.html"> Supllier </a>
