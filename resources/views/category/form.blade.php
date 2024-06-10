@@ -6,11 +6,11 @@
     @csrf
     @method('post')
 
-    <div class="modal-body col-md-6">
+    <div class="modal-body col-md-6 col-lg-12">
         <div class="form-group row">
-            <label for="name" class="col-md-2 col-lg-12 control-label">Kategori</label>
+            <label for="name">Kategori</label>
             <div class="col-md-6 col-lg-12">
-                <input type="text" name="name" class="form-control col-sm-4 col-lg-12">
+                <input type="text" name="name" class="form-control">
             </div>
         </div>
     </div>
