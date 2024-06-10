@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
 // use Barryvdh\DomPDF\PDF;
-use Barryvdh\DomPDF\Facade\Pdf;
+// use Barryvdh\DomPDF\Facade\Pdf;
+use Barryvdh\Snappy\Facades\SnappyPdf as PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -199,8 +200,8 @@ class ProductController extends Controller
         }
 
         $no = 1;
-        $pdf = PDF::loadView('product.barcode', compact('dataProduct', 'no'));        
-        return $pdf->stream('product.pdf');
+        $pdf = PDF::loadView('product.barcode', compact('dataProduct', 'no'))->setPaper('a4');        
+        return $pdf->inline('product.pdf');
 
     }
 
