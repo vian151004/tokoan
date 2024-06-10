@@ -40,7 +40,7 @@
                                             <a href="{{ route('member.index') }}"> Member </a>
                                         </li>
                                         <li>
-                                            <a href="ui_typography.html"> Supllier </a>
+                                            <a href="{{ route('supplier.index') }}"> Supllier </a>
                                         </li>                                        
                                     </ul>
                                 </li>
