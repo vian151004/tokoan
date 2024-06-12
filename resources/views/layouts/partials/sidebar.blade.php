@@ -67,7 +67,7 @@
                                     <ul class="list-unstyled sub-submenu collapse show eq-animated eq-fadeInUp"
                                         id="tables">
                                         <li>
-                                            <a href="table_basic.html"> Pengeluaran </a>
+                                            <a href="{{ route('expenditure.index') }}"> Pengeluaran </a>
                                         </li>
                                         <li>
                                             <a href="table_tablesaw.html"> Pembelian </a>
