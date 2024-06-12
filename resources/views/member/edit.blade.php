@@ -20,7 +20,7 @@
                         <div class="form-group row">
                             <label for="name">Nama</label>
                             <div class="col-md-6 col-lg-12">
-                                <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') ?? $member->name }}"">
+                                <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') ?? $member->name }}">
                                 @error('name')
                                     <div class="invalid-feedback">
                                         {{ $message }}
