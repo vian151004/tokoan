@@ -1,11 +1,13 @@
 <!--  BEGIN NAVBAR  -->
 <header class="desktop-nav header navbar fixed-top">
-    <div class="nav-logo mr-sm-5 ml-sm-4">
+    <div class="nav-logo mr-sm-1 ml-sm-4">
         <a href="javascript:void(0);" class="nav-link sidebarCollapse d-inline-block mr-sm-5" data-placement="bottom">
             <i class="flaticon-menu-line-3"></i>
         </a>
-        <a href="index.html" class=""> <img src="{{ asset('Equation3/ltr/assets/img/1.png') }}" class="img-fluid"
-            alt="logo">
+    </div>
+    <div class="nav-logo mr-sm-5 ml-sm-1">        
+        <a href="index.html" class=""> 
+            <img src="{{ asset('Equation3/ltr/assets/img/1.png') }}" class="img-fluid" alt="logo">
         </a>
     </div>
     <ul class="navbar-nav flex-row mr-auto">

@@ -80,55 +80,53 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
     </head>
-    <body class="font-sans antialiase">
-        <div class="min-h-screen bg-gray-100">
-            <div id="eq-loader">
-                <div class="eq-loader-div">
-                    <div class="eq-loading dual-loader mx-auto mb-5"></div>
-                </div>
+    <body>
+        <div id="eq-loader">
+            <div class="eq-loader-div">
+                <div class="eq-loading dual-loader mx-auto mb-5"></div>
             </div>
-        
-            <!--  BEGIN NAVBAR  -->
-            @includeIf('layouts.partials.header')
-            <!--  END NAVBAR  -->
-
-            <!--  BEGIN MAIN CONTAINER  -->
-            <div class="main-container" id="container">
-            <div class="overlay"></div>
-            <div class="ps-overlay"></div>
-            <div class="search-overlay"></div>
-                
-            @includeIf('layouts.partials.sidebar')
-
-            <div id="content" class="main-content">
-                <div class="container">
-                    <div class="page-header">
-                        <div class="page-title">
-                            <h3>@yield('title')</h3>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="crumbs">
-                                    <ul class="breadcrumb float-sm-right mt-4 col-sm-2">
-                                        @section('breadcrumb')                                     
-                                        <li class="breadcrumb-item"><a href="/"><i class="flaticon-home-fill"></i></a></li>
-                                        @show
-                                    </ul>
-                                </div>
-                            </div>        
-                        </div>
-                    </div>
-                    @yield('content')
-                </div>
-            </div>
-            <!-- END MAIN CONTAINER -->
-            
-            @includeIf('layouts.partials.footer')
-        
-            <!--  BEGIN PROFILE SIDEBAR  -->
-            @includeIf('layouts.partials.profile')
-            <!--  BEGIN PROFILE SIDEBAR  -->
         </div>
+    
+        <!--  BEGIN NAVBAR  -->
+        @includeIf('layouts.partials.header')
+        <!--  END NAVBAR  -->
+
+        <!--  BEGIN MAIN CONTAINER  -->
+        <div class="main-container" id="container">
+        <div class="overlay"></div>
+        <div class="ps-overlay"></div>
+        <div class="search-overlay"></div>
+            
+        @includeIf('layouts.partials.sidebar')
+
+        <div id="content" class="main-content">
+            <div class="container">
+                <div class="page-header">
+                    <div class="page-title">
+                        <h3>@yield('title')</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="crumbs">
+                                <ul class="breadcrumb float-sm-right mt-4 col-sm-2">
+                                    @section('breadcrumb')                                     
+                                    <li class="breadcrumb-item"><a href="/"><i class="flaticon-home-fill"></i></a></li>
+                                    @show
+                                </ul>
+                            </div>
+                        </div>        
+                    </div>
+                </div>
+                @yield('content')
+            </div>
+        </div>
+        <!-- END MAIN CONTAINER -->
+        
+        @includeIf('layouts.partials.footer')
+    
+        <!--  BEGIN PROFILE SIDEBAR  -->
+        @includeIf('layouts.partials.profile')
+        <!--  BEGIN PROFILE SIDEBAR  -->
 
         <!-- The element with ID "daily" -->
         <div id="daily" class="ct-chart"></div>
@@ -151,11 +149,9 @@
         <!-- END GLOBAL MANDATORY SCRIPTS -->
     
         <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-        {{-- <script src="{{ asset('Equation3/ltr/plugins/charts/chartist/chartist.js') }}"></script> --}}
         <script src="{{ asset('Equation3/ltr/plugins/maps/vector/jvector/jquery-jvectormap-2.0.3.min.js') }}"></script>
         <script src="{{ asset('Equation3/ltr/plugins/maps/vector/jvector/worldmap_script/jquery-jvectormap-world-mill-en.js') }}"></script>
         <script src="{{ asset('Equation3/ltr/plugins/charts/chartist/moment.js') }}"></script>
-        <script src="{{ asset('Equation3/lr/plugins/charts/chartist/chartist-bar.js') }}"></script>
         <script src="{{ asset('Equation3/ltr/plugins/calendar/pignose/moment.latest.min.js') }}"></script>
         <script src="{{ asset('Equation3/ltr/plugins/calendar/pignose/pignose.calendar.js') }}"></script>
         <script src="{{ asset('Equation3/ltr/plugins/progressbar/progressbar.min.js') }}"></script>

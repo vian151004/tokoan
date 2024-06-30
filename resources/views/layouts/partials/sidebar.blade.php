@@ -9,7 +9,7 @@
                             <i class="flaticon-computer-6"></i>
                             <span>DASHBOARD</span>
                         </div>
-                    </a>                   
+                    </a>
                 </li>
 
                 <li class="menu">
@@ -26,7 +26,7 @@
                             <ul class="list-unstyled">
                                 <li>
                                     <a href="#ui-features" data-toggle="collapse" aria-expanded="true"
-                                        class="dropdown-toggle"> <span class="">Kebutuhan</span> 
+                                        class="dropdown-toggle"> <span class="">Kebutuhan</span>
                                     </a>
                                     <ul class="list-unstyled sub-submenu collapse show eq-animated eq-fadeInUp"
                                         id="ui-features">
@@ -41,10 +41,10 @@
                                         </li>
                                         <li>
                                             <a href="{{ route('supplier.index') }}"> Supllier </a>
-                                        </li>                                        
+                                        </li>
                                     </ul>
                                 </li>
-                            </ul>                            
+                            </ul>
                         </div>
                     </div>
                 </li>
@@ -81,7 +81,7 @@
                                         <li>
                                             <a href="table_sticky_table_header.html"> Transaksi Baru </a>
                                         </li>
-                                        {{-- <li class="sub-sub-submenu-list">
+                                        <!-- <li class="sub-sub-submenu-list">
                                             <a href="#tables-editable" data-toggle="collapse" aria-expanded="false"
                                                 class="dropdown-toggle"> Editable <i class="flaticon-right-arrow"></i>
                                             </a>
@@ -140,7 +140,7 @@
                                                 </li>
 
                                             </ul>
-                                        </li> --}}
+                                        </li> -->
                                     </ul>
                                 </li>
                             </ul>
@@ -526,7 +526,7 @@
                                             </li>
                                             <li>
                                                 <a href="apps_mailbox.html"> Pengaturan </a>
-                                            </li>                                
+                                            </li>
                                             {{-- <li>
                                                 <a href="apps_newsletter.html"> Newsletter </a>
                                             </li>
@@ -558,7 +558,7 @@
                     </div>
                 </li>
 
-                {{-- <li class="menu">
+                <!-- <li class="menu">
                     <a href="#more" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <div class="">
                             <i class="flaticon-plus"></i>
@@ -732,7 +732,7 @@
 
                         </div>
                     </div>
-                </li> --}}
+                </li> -->
 
             </ul>
         </nav>
