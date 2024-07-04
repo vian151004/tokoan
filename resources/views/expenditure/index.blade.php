@@ -24,8 +24,8 @@
                         <th class="checkbox-column text-center" width="5%">No</th>
                         <th width="12%" class="text-center">Tanggal</th>
                         <th class="text-center">Deskripsi</th>
-                        <th width="8%">Nominal</th>
-                        <th width="15%" class="text-center"><i class="fas fa-cog"></i></th>                          
+                        <th class="text-center">Nominal</th>
+                        <th width="12%" class="text-center"><i class="fas fa-cog"></i></th>                          
                     </x-slot>
                 </x-table>
             </x-card>

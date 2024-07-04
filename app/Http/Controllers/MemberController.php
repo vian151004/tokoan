@@ -170,7 +170,7 @@ class MemberController extends Controller
         $dataMember = $dataMember->chunk(2);
 
         $no = 1;
-        $pdf = PDF::loadView('member.membership', compact('dataMember', 'no'))->setPaper('a4', 'portrait');
+        $pdf = PDF::loadView('member.membership', compact('dataMember', 'no'))->setPaper('a4');
 
         return $pdf->inline('member.pdf');
     }
