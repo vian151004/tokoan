@@ -5,12 +5,12 @@
     'aria-hidden' => 'true'
 ]) }} >
 
-    <div class="col-lg-12 layout-spacing {{ isset($size) ? $size : 'modal-xl' }}">
+    <div class="col-lg-12 layout-spacing">
         <div class="statbox widget box box-shadow">
             <form method="{{ isset($method) ? $method : 'post' }}">
                                        
                 <div class="modal" tabindex="-1" role="dialog">
-                    <div class="modal-dialog" role="document">
+                    <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             @isset($title)
                             <div class="modal-header">

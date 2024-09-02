@@ -70,7 +70,7 @@
                                             <a href="{{ route('expenditure.index') }}"> Pengeluaran </a>
                                         </li>
                                         <li>
-                                            <a href="table_tablesaw.html"> Pembelian </a>
+                                            <a href="{{ route('purchase.index')}}"> Pembelian </a>
                                         </li>
                                         <li>
                                             <a href="table_sticky_table_header.html"> Penjualan </a>
