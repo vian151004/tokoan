@@ -509,7 +509,7 @@
                 <li class="menu">
                     <a href="#app" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle collapsed">
                         <div class="">
-                            <i class="flaticon-mail-19"></i>
+                            <i class="flaticon-gear"></i>
                             <span>SISTEM</span>
                         </div>
                     </a>
@@ -525,7 +525,7 @@
                                                 <a href="apps_chat.html"> User </a>
                                             </li>
                                             <li>
-                                                <a href="apps_mailbox.html"> Pengaturan </a>
+                                                <a href="{{ route('setting.index') }}"> Pengaturan </a>
                                             </li>
                                             {{-- <li>
                                                 <a href="apps_newsletter.html"> Newsletter </a>
