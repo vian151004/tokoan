@@ -9,9 +9,11 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
+    use HasRoles;
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
@@ -25,9 +27,14 @@ class User extends Authenticatable
         return $this->hasOne(Role::class, 'id', 'role_id'); //(Role::class, 'forign key', 'local key')
     }
 
-    public function hasRole($role)
-    {
-        return $this->role->name == $role; //jika name sma dengan $role, hasilnya true dan kebalikannya
+    // public function hasRole($role)
+    // {
+    //     return $this->role->name == $role; //jika name sma dengan $role, hasilnya true dan kebalikannya
+    // }
+
+    public function hasRole($role) 
+    { 
+        return $this->roles->contains('name', $role); 
     }
 
     function scopeSemiAdmin($query)

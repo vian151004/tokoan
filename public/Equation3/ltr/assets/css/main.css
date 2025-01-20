@@ -600,7 +600,7 @@ ul.inline-ordered-list li:before {
 .crumbs .breadcrumb {
     display: inline-flex;
     padding: 8px;
-    background-color: #f1f3f1;
+    background-color: #f0f0f0;
 }
 .crumbs .breadcrumb li {
     font-size: 12px

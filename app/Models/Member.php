@@ -17,4 +17,10 @@ class Member extends Model
         'address',
         'phone'
     ];
+
+    function sales()
+    {
+        return $this->hasMany(sales::class, 'member_id', 'id');  
+    
+    }
 }

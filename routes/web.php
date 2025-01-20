@@ -7,6 +7,8 @@ use App\Http\Controllers\ExpenditureController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\PurchaseDetailController;
+use App\Http\Controllers\SalesController;
+use App\Http\Controllers\SalesDetailController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SupplierController;
 
@@ -81,6 +83,14 @@ Route::group([
         // Route::get('/purchase_detail/loadform/{diskon}/{total}', [PurchaseDetailController::class, 'loadForm'])->name('purchase_detail.load_form');
         Route::resource('/purchase_detail', PurchaseDetailController::class)
             ->except('create', 'show', 'edit');
+
+        Route::get('/sales/new', [SalesController::class, 'create'])
+            ->name('sales.new');
+        // Route::resource('/sales', SalesController::class)
+        //     ->except('create');
+
+        Route::resource('/sales', SalesDetailController::class)
+            ->except('show');
 });
 
 Route::group([

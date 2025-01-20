@@ -73,13 +73,13 @@
                                             <a href="{{ route('purchase.index')}}"> Pembelian </a>
                                         </li>
                                         <li>
-                                            <a href="table_sticky_table_header.html"> Penjualan </a>
+                                            <a href=""> Penjualan </a>
                                         </li>
                                         <li>
-                                            <a href="table_sticky_table_header.html"> Transaksi Lama </a>
+                                            <a href="{{ route('sales.index') }}"> Transaksi Lama </a>
                                         </li>
                                         <li>
-                                            <a href="table_sticky_table_header.html"> Transaksi Baru </a>
+                                            <a href="{{ route('sales.new') }}"> Transaksi Baru </a>
                                         </li>
                                         <!-- <li class="sub-sub-submenu-list">
                                             <a href="#tables-editable" data-toggle="collapse" aria-expanded="false"

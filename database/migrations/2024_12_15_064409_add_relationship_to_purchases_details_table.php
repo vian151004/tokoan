@@ -15,13 +15,13 @@ return new class extends Migration
             $table->foreign('purchase_id')
                  ->references('id')
                  ->on('purchases')
-                 ->onUpdate('restrict')
+                 ->onUpdate('cascade')
                  ->onDelete('restrict');
 
             $table->foreign('product_id')
                  ->references('id')
                  ->on('products')
-                 ->onUpdate('restrict')
+                 ->onUpdate('cascade')
                  ->onDelete('restrict');
         });
     }

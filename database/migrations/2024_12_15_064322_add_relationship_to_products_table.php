@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('purchases', function (Blueprint $table) {
-            $table->foreign('supplier_id')
+        Schema::table('products', function (Blueprint $table) {
+            $table->foreign('category_id')
                  ->references('id')
-                 ->on('suppliers')
-                 ->onUpdate('restrict')
+                 ->on('categories')
+                 ->onUpdate('cascade')
                  ->onDelete('restrict');
         });
     }
@@ -25,8 +25,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('purchase_details', function (Blueprint $table) {
-            $table->dropForeign('purchases_supplier_id_foreign');
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropForeign('products_category_id_foreign');
         });
     }
 };
